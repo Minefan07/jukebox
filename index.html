@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="icon" href="icon/favicon3.png">
+		<title>
+			Jukebox! (MCMP v2.0)
+		</title>
+		<style>
+			body {
+				font-family: console;
+				font-size: 20px;
+			}
+
+			.audio-container {
+				display: none;
+				position: relative;
+				top: 20px;
+			}
+
+			.info {
+				position: fixed;
+				left: 20px;
+				top: 5px;
+				margin-right: 20px;
+			}
+
+			.songsel {
+				position: relative;
+				left: 0px;
+				top: 10px;
+				width: 250px;
+				height: 20px;
+				font-family: console;
+				font-size: 20px;
+			}
+
+			.playsong {
+				font-family: console;
+				position: relative;
+				top: 10px;
+				left: 10px;
+				height: 25px;
+				font-size: 20px;
+			}
+
+			.playall {
+				font-family: console;
+				position: relative;
+				top: 5px;
+				left: 0px;
+				height: 25px;
+				font-size: 20px;
+			}
+
+			.playablesonglist {
+				position: relative;
+				font-family: console;
+				left: 0px;
+				top: 5px;
+				height: 25px;
+				font-size: 20px;
+			}
+
+			@font-face {
+				font-family: console;
+				src: url("fonts/console.ttf");
+			}
+
+			.nowplayin {
+				position: relative;
+				top: 15px;
+				animation: rainbow 4s linear infinite;
+			}
+
+			.bugfix-container {
+				position: fixed;
+				font-family: console;
+				bottom: 0px;
+				right: 5px;
+				height: 25px;
+				font-size: 20px;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.aboutver {
+				position: fixed;
+				bottom: 0px;
+				left: 5px;
+			}
+
+			@keyframes rainbow {
+				0% { color: red; }
+				25% { color: orange; }
+				50% { color: green; }
+				75% { color: blue; }
+				90% { color: purple; }
+				100% { color: red; }
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+
+			function pickSong(piece) {
+				// end of song var list
+				var song = document.getElementById("songsel");
+				var songplayin = document.getElementById("songplayin");
+				var audiobox = document.getElementById("audiobox");
+				var audiocontainer = document.getElementById("audio-container");
+
+				let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+width=300,height=150,left=10,top=10`;
+
+				if (song.value === "key" || piece === "key") {
+					//let songWindow = open('./mcvola/key.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/key.mp3";
+					songplayin.innerHTML = "Key";
+				}
+				else if (song.value === "door" || piece === "door") {
+					//let songWindow = open('./mcvola/door.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/door.mp3";
+					songplayin.innerHTML = "Door";
+				} 
+				else if (song.value === "subwoofer lullaby" || piece === "subwoofer lullaby") {
+					//let songWindow = open('./mcvola/subwoofer lullaby.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/subwoofer lullaby.mp3";
+					songplayin.innerHTML = "Subwoofer Lullaby";
+				} 
+				else if (song.value === "death" || piece === "death") {
+					//let songWindow = open('./mcvola/death.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/death.mp3";
+					songplayin.innerHTML = "Death";
+				} 
+				else if (song.value === "living mice" || piece === "living mice") {
+					//let songWindow = open('./mcvola/living mice.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/living mice.mp3";
+					songplayin.innerHTML = "Living Mice";
+				}
+				else if (song.value === "moog city" || piece === "moog city") {
+					//let songWindow = open('./mcvola/moog city.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/moog city.mp3";
+					songplayin.innerHTML = "Moog City";
+				} 
+				else if (song.value === "haggstrom" || piece === "haggstrom") {
+					//let songWindow = open('./mcvola/haggstrom.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/haggstrom.mp3";
+					songplayin.innerHTML = "Haggstrom";
+				}
+				else if (song.value === "minecraft" || piece === "minecraft") {
+					//let songWindow = open('./mcvola/minecraft.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/minecraft.mp3";
+					songplayin.innerHTML = "Minecraft";
+				}
+				else if (song.value === "oxygene" || song.value === "oxygène" || piece === "oxygene" || piece === "oxygène") {
+					//let songWindow = open('./mcvola/oxygène.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/oxygène.mp3";
+					songplayin.innerHTML = "Oxygène";
+				} 
+				else if (song.value === "equinoxe" || song.value === "équinoxe" || piece === "equinoxe" || piece === "équinoxe") {
+					//let songWindow = open('./mcvola/équinoxe.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/équinoxe.mp3";
+					songplayin.innerHTML = "Équinoxe";
+				} 
+				else if (song.value === "mice on venus" || piece === "mice on venus") {
+					//let songWindow = open('./mcvola/mice on venus.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/mice on venus.mp3";
+					songplayin.innerHTML = "Mice on Venus";
+				}
+				else if (song.value === "dry hands" || piece === "dry hands") {
+					//let songWindow = open('./mcvola/dry hands.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/dry hands.mp3";
+					songplayin.innerHTML = "Dry Hands";
+				}
+				else if (song.value === "wet hands" || piece === "wet hands") {
+					//let songWindow = open('./mcvola/wet hands.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/wet hands.mp3";
+					songplayin.innerHTML = "Wet Hands";
+				}
+				else if (song.value === "clark" || piece === "clark") {
+					//let songWindow = open('./mcvola/clark.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/clark.mp3";
+					songplayin.innerHTML = "Clark";
+				}
+				else if (song.value === "chris" || piece === "chris") {
+					//let songWindow = open('./mcvola/chris.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/chris.mp3";
+					songplayin.innerHTML = "Chris";
+				}
+				else if (song.value === "thirteen" || piece === "thirteen") {
+					//let songWindow = open('./mcvola/thirteen.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/thirteen.mp3";
+					songplayin.innerHTML = "Thirteen";
+				}
+				else if (song.value === "excuse" || piece === "excuse") {
+					//let songWindow = open('./mcvola/excuse.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/excuse.mp3";
+					songplayin.innerHTML = "Excuse";
+				}
+				else if (song.value === "sweden" || piece === "sweden") {
+					//let songWindow = open('./mcvola/sweden.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/sweden.mp3";
+					songplayin.innerHTML = "Sweden";
+				}
+				else if (song.value === "cat" || piece === "cat") {
+					//let songWindow = open('./mcvola/cat.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/cat.mp3";
+					songplayin.innerHTML = "Cat";
+				}
+				else if (song.value === "dog" || piece === "dog") {
+					//let songWindow = open('./mcvola/dog.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/dog.mp3";
+					songplayin.innerHTML = "Dog";
+				}
+				else if (song.value === "danny" || piece === "danny") {
+					//let songWindow = open('./mcvola/danny.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/danny.mp3";
+					songplayin.innerHTML = "Danny";
+				}
+				else if (song.value === "beginning" || piece === "beginning") {
+					//let songWindow = open('./mcvola/beginning.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/beginning.mp3";
+					songplayin.innerHTML = "Beginning";
+				}
+				else if (song.value === "droopy likes ricochet" || piece === "droopy likes ricochet") {
+					//let songWindow = open('./mcvola/droopy likes ricochet.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/droopy likes ricochet.mp3";
+					songplayin.innerHTML = "Droopy Likes Ricochet";
+				}
+				else if (song.value === "droopy likes your face" || piece === "droopy likes your face") {
+					//let songWindow = open('./mcvola/droopy likes your face.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvola/droopy likes your face.mp3";
+					songplayin.innerHTML = "Droopy Likes Your Face";
+				}
+				// beta
+				else if (song.value === "ki" || piece === "ki") {
+					//let songWindow = open('./mcvolb/ki.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/ki.mp3";
+					songplayin.innerHTML = "Ki";
+				}
+				else if (song.value === "alpha" || piece === "alpha") {
+					//let songWindow = open('./mcvolb/alpha.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/alpha.mp3";
+					songplayin.innerHTML = "Alpha";
+				}
+				else if (song.value === "dead voxel" || piece === "dead voxel") {
+					//let songWindow = open('./mcvolb/dead voxel.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/dead voxel.mp3";
+					songplayin.innerHTML = "Dead Voxel";
+				}
+				else if (song.value === "blind spots" || piece === "blind spots") {
+					//let songWindow = open('./mcvolb/blind spots.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/blind spots.mp3";
+					songplayin.innerHTML = "Blind Spots";
+				}
+				else if (song.value === "flake" || piece === "flake") {
+					//let songWindow = open('./mcvolb/flake.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/flake.mp3";
+					songplayin.innerHTML = "Flake";
+				}
+				else if (song.value === "moog city 2" || piece === "moog city 2") {
+					//let songWindow = open('./mcvolb/moog city 2.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/moog city 2.mp3";
+					songplayin.innerHTML = "Moog City 2";
+				}
+				else if (song.value === "concrete halls" || piece === "concrete halls") {
+					//let songWindow = open('./mcvolb/concrete halls.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/concrete halls.mp3";
+					songplayin.innerHTML = "Concrete Halls";
+				}
+				else if (song.value === "biome fest" || piece === "biome fest") {
+					//let songWindow = open('./mcvolb/biome fest.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/biome fest.mp3";
+					songplayin.innerHTML = "Biome Fest";
+				}
+				else if (song.value === "mutation" || piece === "mutation") {
+					//let songWindow = open('./mcvolb/mutation.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/mutation.mp3";
+					songplayin.innerHTML = "Mutation";
+				}
+				else if (song.value === "haunt muskie" || piece === "haunt muskie") {
+					//let songWindow = open('./mcvolb/haunt muskie.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/haunt muskie.mp3";
+					songplayin.innerHTML = "Haunt Muskie";
+				}
+				else if (song.value === "warmth" || piece === "warmth") {
+					//let songWindow = open('./mcvolb/warmth.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/warmth.mp3";
+					songplayin.innerHTML = "Warmth";
+				}
+				else if (song.value === "floating trees" || piece === "floating trees") {
+					//let songWindow = open('./mcvolb/floating trees.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/floating trees.mp3";
+					songplayin.innerHTML = "Floating Trees";
+				}
+				else if (song.value === "aria math" || piece === "aria math") {
+					//let songWindow = open('./mcvolb/aria math.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/aria math.mp3";
+					songplayin.innerHTML = "Aria Math";
+				}
+				else if (song.value === "kyoto" || piece === "kyoto") {
+					//let songWindow = open('./mcvolb/kyoto.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/kyoto.mp3";
+					songplayin.innerHTML = "Kyoto";
+				}
+				else if (song.value === "ballad of the cats" || piece === "ballad of the cats") {
+					//let songWindow = open('./mcvolb/ballad of the cats.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/ballad of the cats.mp3";
+					songplayin.innerHTML = "Ballad of the Cats";
+				}
+				else if (song.value === "taswell" || piece === "taswell") {
+					//let songWindow = open('./mcvolb/taswell.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/taswell.mp3";
+					songplayin.innerHTML = "Taswell";
+				}
+				else if (song.value === "beginning 2" || piece === "beginning 2") {
+					//let songWindow = open('./mcvolb/beginning 2.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/beginning 2.mp3";
+					songplayin.innerHTML = "Beginning 2";
+				}
+				else if (song.value === "dreiton" || piece === "dreiton") {
+					//let songWindow = open('./mcvolb/dreiton.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/dreiton.mp3";
+					songplayin.innerHTML = "Dreiton";
+				}
+				else if (song.value === "the end" || piece === "the end") {
+					//let songWindow = open('./mcvolb/the end.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/the end.mp3";
+					songplayin.innerHTML = "The End";
+				}
+				else if (song.value === "chirp" || piece === "chirp") {
+					//let songWindow = open('./mcvolb/chirp.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/chirp.mp3";
+					songplayin.innerHTML = "Chirp";
+				}
+				else if (song.value === "wait" || piece === "wait") {
+					//let songWindow = open('./mcvolb/wait.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/wait.mp3";
+					songplayin.innerHTML = "Wait";
+				}
+				else if (song.value === "mellohi" || piece === "mellohi") {
+					//let songWindow = open('./mcvolb/mellohi.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/mellohi.mp3";
+					songplayin.innerHTML = "Mellohi";
+				}
+				else if (song.value === "stal" || piece === "stal") {
+					//let songWindow = open('./mcvolb/stal.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/stal.mp3";
+					songplayin.innerHTML = "Stal";
+				}
+				else if (song.value === "strad" || piece === "strad") {
+					//let songWindow = open('./mcvolb/strad.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/strad.mp3";
+					songplayin.innerHTML = "Strad";
+				}
+				else if (song.value === "eleven" || piece === "eleven") {
+					//let songWindow = open('./mcvolb/eleven.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/eleven.mp3";
+					songplayin.innerHTML = "Eleven";
+				}
+				else if (song.value === "ward" || piece === "ward") {
+					//let songWindow = open('./mcvolb/ward.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/ward.mp3";
+					songplayin.innerHTML = "Ward";
+				}
+				else if (song.value === "mall" || piece === "mall") {
+					//let songWindow = open('./mcvolb/mall.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/mall.mp3";
+					songplayin.innerHTML = "Mall";
+				}
+				else if (song.value === "blocks" || piece === "blocks") {
+					//let songWindow = open('./mcvolb/blocks.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/blocks.mp3";
+					songplayin.innerHTML = "Blocks";
+				}
+				else if (song.value === "far" || piece === "far") {
+					//let songWindow = open('./mcvolb/far.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/far.mp3";
+					songplayin.innerHTML = "Far";
+				}
+				else if (song.value === "intro" || piece === "intro") {
+					//let songWindow = open('./mcvolb/intro.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./mcvolb/intro.mp3";
+					songplayin.innerHTML = "Intro";
+				}
+				
+				//lena raine
+				else if (song.value === "pigstep" || piece === "pigstep") {
+					//let songWindow = open('./lenaraine/pigstep.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./lenaraine/pigstep.mp3";
+					songplayin.innerHTML = "Pigstep";
+				}
+				else if (song.value === "otherside" || piece === "otherside") {
+					//let songWindow = open('./lenaraine/otherside.mp3', 'test', params);
+					audiocontainer.style.display = "block";
+					audiobox.src = "./lenaraine/otherside.mp3";
+					songplayin.innerHTML = "Otherside";
+				}
+
+				//just for fun
+				else if (song.value === "WHAT'S POPPIN'") {
+					alert("I don't know. Why don't you select a song?");
+				}
+
+				else {
+					alert("Not a song!\nPlease check your spelling or capitalization.");
+					songplayin.innerHTML = "";
+				}
+
+				/*
+				audiobox.addEventListener("ended", function(){
+					songplayin.innerHTML = "";
+					audiocontainer.style.display = "none";
+				});
+				*/				
+
+			}
+
+			function playAll() {
+				var audio = new Audio();
+				var strings = "mcvola/key door subwolby death livimice moogcity haggstrm".split(" ");
+				var index = 1;
+
+				audio.src='https://minefan07.github.io/' + strings[0] + ".mp3";
+				audio.play();
+
+				audio.onended = function() {
+					if(index < strings.length){
+						audio.src='https://minefan07.github.io' + strings[index] + '.mp3';
+						audio.play();
+						index++;
+					}
+				};
+
+				//MC volume alpha
+				var key = new Audio("mcvola/key.mp3");
+				var door = new Audio("mcvola/door.mp3");
+				var subwolby = new Audio("mcvola/subwoofer lullaby.mp3");
+				var death = new Audio("mcvola/death.mp3");
+				var livimice = new Audio("mcvola/living mice.mp3");
+				var moogcity = new Audio("mcvola/moog city.mp3");
+				var haggstrm = new Audio("mcvola/haggstrom.mp3");
+				var minecraf = new Audio("mcvola/minecraft.mp3");
+				var oxygene = new Audio("mcvola/oxygène.mp3");
+				var equinoxe = new Audio("mcvola/équinoxe.mp3");
+				var miconven = new Audio("mcvola/mice on venus.mp3");
+				var dryhands = new Audio("mcvola/dry hands.mp3");
+				var wethands = new Audio("mcvola/wet hands.mp3");
+				var clark = new Audio("mcvola/clark.mp3");
+				var chris = new Audio("mcvola/chris.mp3");
+				var thirteen = new Audio("mcvola/thirteen.mp3");
+				var excuse = new Audio("mcvola/excuse.mp3");
+				var sweden = new Audio("mcvola/sweden.mp3");
+				var cat = new Audio("mcvola/cat.mp3");
+				var dog = new Audio("mcvola/dog.mp3");
+				var danny = new Audio("mcvola/danny.mp3");
+				var beginnin = new Audio("mcvola/beginning.mp3");
+				var drolksrt = new Audio("mcvola/droopy likes ricochet.mp3");
+				var drlkyrfc = new Audio("mcvola/droopy likes your face.mp3");
+				//MC volume beta
+				var ki = new Audio("mcvolb/ki.mp3");
+				var alpha = new Audio("mcvolb/alpha.mp3");
+				var deadvoxl = new Audio("mcvolb/dead voxel.mp3");
+				var blndspts = new Audio("mcvolb/blind spots.mp3");
+				var flake = new Audio("mcvolb/flake.mp3");
+				var moogcit2 = new Audio("mcvolb/moog city 2.mp3");
+				var conchall = new Audio("mcvolb/concrete halls.mp3");
+				var biomfest = new Audio("mcvolb/biome fest.mp3");
+				var mutation = new Audio("mcvolb/mutation.mp3");
+				var hntmuski = new Audio("mcvolb/haunt muskie.mp3");
+				var warmth = new Audio("mcvolb/warmth.mp3");
+				var floatree = new Audio("mcvolb/floating trees.mp3");
+				var ariamath = new Audio("mcvolb/aria math.mp3");
+				var kyoto = new Audio("mcvolb/kyoto.mp3");
+				var baoftcat = new Audio("mcvolb/ballad of the cats.mp3");
+				var taswell = new Audio("mcvolb/taswell.mp3");
+				var beginni2 = new Audio("mcvolb/beginning 2.mp3");
+				var dreiton = new Audio("mcvolb/dreiton.mp3");
+				var theend = new Audio("mcvolb/the end.mp3");
+				var chirp = new Audio("mcvolb/chirp.mp3");
+				var wait = new Audio("mcvolb/wait.mp3");
+				var mellohi = new Audio("mcvolb/mellohi.mp3");
+				var stal = new Audio("mcvolb/stal.mp3");
+				var strad = new Audio("mcvolb/strad.mp3");
+				var eleven = new Audio("mcvolb/eleven.mp3");
+				var ward = new Audio("mcvolb/ward.mp3");
+				var mall = new Audio("mcvolb/mall.mp3");
+				var blocks = new Audio("mcvolb/blocks.mp3");
+				var far = new Audio("mcvolb/far.mp3");
+				var intro = new Audio("mcvolb/intro.mp3");
+				// lena raine songs
+				var pigstep = new Audio("lenaraine/pigstep.mp3");
+				var othrside = new Audio("lenaraine/otherside.mp3");
+				// end of song var list
+				var song = document.getElementById("songsel");
+				var songplayin = document.getElementById("songplayin");
+			}
+
+			function parseReq()
+			{
+				var audiocontainer = document.getElementById("audio-container");
+				var request = document.getElementById("songsel").value;
+				var index = 0;
+				var songplaying = document.getElementById("songplayin");
+				const list = request.split(",");
+				//alert(list[0] + " " + list[1] + " " + list[2]);
+				//alert(request);
+				pickSong(list[0]);
+				audiobox.addEventListener('ended',function(e){
+					index++; //Your current index
+					//alert("ended, new index is " + index + " and value is " + list[index]);
+					if(index < list.length){ //Check if there is other audio.
+						pickSong(list[index]);
+					}
+					else if (index == list.length)
+					{
+						songplayin.innerHTML = "";
+						audiocontainer.style.display = "none";
+					}
+					else
+					{
+						songplayin.innerHTML = "";
+						audiocontainer.style.display = "none";
+					}
+				});
+			}
+
+
+		</script>
+		<div id="info" class="info">This was made possible by locoloader.com and by me :-), and of course C418 and Lena Raine.<br>Welcome to the Jukebox, the new and improved Minecraft Music Player. Complete with bugfixes and new features, it's obviously better than before. To play a specific song, type in its name in lowercase or else it won't work. To play multiple in order, separate multiple song names with commas. Make sure to spell the song correctly, with the exception of Oxygène and Équinoxe, in which case you can type it with or without the accent marks.
+			<br><button class="playablesonglist" onclick="window.open('playables/index.html');">Playable Song List</button><br>
+			<input id="songsel" class="songsel">
+			<button onclick="parseReq();" class="playsong" id="playsong">Play</button><br>
+			<div class="nowplayin" id="nowplayin">Now playing: <span id="songplayin"></span></div>
+			<div class="bugfix-container" id="bugfix-container"><a href="improvements/index.html" target="blank">Improvements</a></div>
+			<div class="audio-container" id="audio-container">
+				<audio id="audiobox" class="audiobox" controls autoplay src="">
+				</audio>
+			</div>
+			<div id="aboutver" class="aboutver">Jukebox version 2.00_092823</div>
+		</div>
+	</body>
+</html>
