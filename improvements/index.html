@@ -10,26 +10,54 @@
 				font-family: console;
 				padding: 0px;
 				margin: 5px;
+				background: #333333;
+				color: white;
 			}
 
 			@font-face {
 				font-family: console;
 				src: url("console.ttf");
 			}
+			
+			table {
+				/*font-family: arial, sans-serif;*/
+				border-collapse: collapse;
+				width: 100%;
+			}
+
+			td, th {
+				border: 1px solid #dddddd;
+				text-align: left;
+				padding: 8px;
+			}
 		</style>
 	</head>
 	<body>
-		Improvements:<br>
-		!0000: It's now possible to play multiple songs, in order specified, using commas as separators<br>
-		!0001: Audio opens in the Jukebox itself rather than in a separate window<br>
-		!0002: The Jukebox displays its version (build date)<br>
-		!0003: Given credit to C418 and Lena Raine (they deserve it)
-		<br><br>
-		
-		Bugfixes:<br>
-		#0000: Équinoxe would not play (wrong url in code)<br><!-- Don't forget the br again! -->
-		#0001: Fixed references to Playables and Improvements for server compatibility
-		<br><br>
-		
+		<table>
+			<tr>
+				<th>Version</th>
+				<th>Improvement(s)</th>
+				<th>Bugfix(es)</th>
+			</tr>
+			<tr>
+				<td>2.01_092923</td>
+				<td>!0000: It's now possible to play multiple songs, in order specified, using commas as separators<br>
+					!0001: Audio opens in the Jukebox itself rather than in a separate window<br>
+					!0002: The Jukebox displays its version (build date)<br>
+					!0003: Given credit to C418 and Lena Raine (they deserve it)
+					<br></td>
+				<td>#0000: Équinoxe would not play (wrong url in code)<br><!-- Don't forget the br again! -->
+					#0001: Fixed references to Playables and Improvements for server compatibility
+					<br></td>
+			</tr>
+			<tr>
+				<td>2.02_122823</td>
+				<td>!0004: Created this table to better organize the bugfixes and improvements<br>
+				!0005: Changed theme to "dark mode" (tweaked colors in "Now Playing" animation)<br>
+				!0006: Added "MC Ambience" button, which randomly selects and then plays songs with a random interval in between</td>
+				<td>[No bugfixes for this version, hooray!]</td>
+			</tr>
+		</table>
+
 	</body>
 </html>
