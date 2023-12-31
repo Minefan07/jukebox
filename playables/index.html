@@ -1,94 +1,131 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="icon" href="favicon.png">
-        <title>Playable Songs</title>
-        <style>
-            body {
-                font-family: console;
-                padding: 0px;
-                margin: 0px;
-					 background: #333333;
-					 color: white;
-            }
+	<head>
+		<link rel="icon" href="favicon.png">
+		<title>Playable Songs</title>
+		<style>
+			body {
+				font-family: console;
+				padding: 0px;
+				margin: 5px;
+				background: #333333;
+				color: white;
+			}
 
-            .playablesongs {
-                position: relative;
-                font-family: console;
-                width: 400px;
-                left: 20px;
-                top: 5px;
-                height: 25px;
-                font-size: 20px;
-            }
+			.playablesongs {
+				position: relative;
+				font-family: console;
+				width: 100%;
+				left: 0px;
+				top: 0px;
+				height: 25px;
+				font-size: 20px;
+			}
 
-            @font-face {
-                font-family: console;
-                src: url("console.ttf");
-            }
-        </style>
-    </head>
-    <body>
-        <div id="playablesongs" class="playablesongs">
-            <h3>Minecraft Volume Alpha</h3><br>
-            Key<br>
-            Door<br>
-            Subwoofer Lullaby<br>
-            Death<br>
-            Living Mice<br>
-            Moog City<br>
-            Haggstrom<br>
-            Minecraft<br>
-            Oxygène<br>
-            Équinoxe<br>
-            Mice on Venus<br>
-            Dry Hands<br>
-            Wet Hands<br>
-            Clark<br>
-            Chris<br>
-            Thirteen<br>
-            Excuse<br>
-            Sweden<br>
-            Cat<br>
-            Dog<br>
-            Danny<br>
-            Beginning<br>
-            Droopy Likes Ricochet<br>
-            Droopy Likes Your Face<br>
-            <h3>Minecraft Volume Beta</h3><br>
-            Ki<br>
-            Alpha<br>
-            Dead Voxel<br>
-            Blind Spots<br>
-            Flake<br>
-            Moog City 2<br>
-            Concrete Halls<br>
-            Biome Fest<br>
-            Mutation<br>
-            Haunt Muskie<br>
-            Warmth<br>
-            Floating Trees<br>
-            Aria Math<br>
-            Kyoto<br>
-            Ballad of the Cats<br>
-            Taswell<br>
-            Beginning 2<br>
-            Dreiton<br>
-            The End<br>
-            Chirp<br>
-            Wait<br>
-            Mellohi<br>
-            Stal<br>
-            Strad<br>
-            Eleven<br>
-            Ward<br>
-            Mall<br>
-            Blocks<br>
-            Far<br>
-            Intro<br>
-            <h3>Lena Raine songs</h3><br>
-            Pigstep<br>
-            Otherside<p> 
-        </div>
-    </body>
+			div {
+				width: 100%;
+			}
+
+			@font-face {
+				font-family: console;
+				src: url("console.ttf");
+			}
+
+			table {
+				/*font-family: arial, sans-serif;*/
+				border-collapse: collapse;
+				width: 100%;
+			}
+
+			td, th {
+				border: 1px solid #dddddd;
+				text-align: left;
+				padding: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="playablesongs" class="playablesongs">
+			<table>
+				<tr>
+					<th>Album</th>
+					<th>Year of Release</th>
+					<th>Composer / Artist</th>
+					<th>Pieces Included</th>
+				</tr>
+				<tr>
+					<td>Minecraft Volume Alpha</td>
+					<td>4 March 2011</td>
+					<td>C418</td>
+					<td>Key,
+						Door,
+						Subwoofer Lullaby,
+						Death,
+						Living Mice,
+						Moog City,
+						Haggstrom,
+						Minecraft,
+						Oxygène,
+						Équinoxe,
+						Mice on Venus,
+						Dry Hands,
+						Wet Hands,
+						Clark,
+						Chris,
+						Thirteen,
+						Excuse,
+						Sweden,
+						Cat,
+						Dog,
+						Danny,
+						Beginning,
+						Droopy Likes Ricochet,
+						Droopy Likes Your Face
+					</td>
+				</tr>
+				<tr>
+					<td>Minecraft Volume Beta</td>
+					<td>9 November 2013</td>
+					<td>C418</td>
+					<td>Ki,
+						Alpha,
+						Dead Voxel,
+						Blind Spots,
+						Flake,
+						Moog City 2,
+						Concrete Halls,
+						Biome Fest,
+						Mutation,
+						Haunt Muskie,
+						Warmth,
+						Floating Trees,
+						Aria Math,
+						Kyoto,
+						Ballad of the Cats,
+						Taswell,
+						Beginning 2,
+						Dreiton,
+						The End,
+						Chirp,
+						Wait,
+						Mellohi,
+						Stal,
+						Strad,
+						Eleven,
+						Ward,
+						Mall,
+						Blocks,
+						Far,
+						Intro
+					</td>
+				</tr>
+				<tr>
+					<td>Minecraft: Nether Update (Original Game Soundtrack)</td>
+					<td>14 June 2020</td>
+					<td>Lena Raine</td>
+					<td>Pigstep (stereo version), Otherside</td>
+				</tr>
+			</table> 
+		</div>
+	</body>
 </html>
